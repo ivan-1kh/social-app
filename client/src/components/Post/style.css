@@ -1,0 +1,43 @@
+.postContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0.6rem 0.9rem;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.username {
+  margin-left: 0.6rem;
+  font-weight: 600;
+}
+
+.menuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.lineSeparator {
+  border: 0;
+  background-color: rgb(230, 230, 230);
+  height: 1px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.utilsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.9rem;
+}

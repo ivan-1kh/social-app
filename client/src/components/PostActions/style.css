@@ -1,0 +1,25 @@
+.actionsContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 0.6rem;
+}
+
+.actionIcon {
+  width: 30px;
+  height: 30px;
+  transition: transform 100ms;
+}
+
+.shareIcon {
+  margin-left: 0.6rem;
+}
+
+.bookmarkIcon {
+  margin-left: auto;
+  color: rgb(255, 62, 62);
+}
+
+.actionIcon:active {
+  transform: scale(1.4);
+}
