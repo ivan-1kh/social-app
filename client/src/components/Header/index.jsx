@@ -10,7 +10,7 @@ export default (props) => {
         <div className='headerContainer'>
             {props.loggedUser ? (
                 <>
-                    <h1>Welcome back {props.loggedUser.first_name}!</h1>
+                    <h1>Welcome back {props.loggedUser.first_name}</h1>
                     <button onClick={handleLogout}>Logout</button>
                 </>
             ) : (
