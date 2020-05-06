@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const cors = require("cors");
+// const cors = require("cors");
 const bodyParser = require("body-parser");
 const compression = require("compression");
 const controllers = require("./controllers/index");
@@ -17,18 +17,18 @@ app.set("port", process.env.PORT || 3000);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.options("*", cors());
+// app.options("*", cors());
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, append,delete,entries,foreach,get,has,keys,set,values,Authorization"
-    );
-    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header(
+//         "Access-Control-Allow-Headers",
+//         "Origin, X-Requested-With, Content-Type, Accept, append,delete,entries,foreach,get,has,keys,set,values,Authorization"
+//     );
+//     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
 
-    next();
-});
+//     next();
+// });
 
 app.use(controllers);
 

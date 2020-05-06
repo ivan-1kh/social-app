@@ -15,7 +15,6 @@ import ActivityPage from "./pages/ActivityPage";
 import ProfilePage from "./pages/ProfilePage";
 import EditProfilePage from "./pages/EditProfilePage";
 import CommentsPage from "./pages/CommentsPage";
-import Header from "./components/Header";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 
@@ -40,7 +39,6 @@ export default (props) => {
 
     return (
         <div className='App'>
-            <Header loggedUser={loggedUser} />
             <BrowserRouter>
                 <Switch className='App'>
                     <Route exact path='/' render={() => <HomePage {...props} loggedUser={loggedUser} />} />

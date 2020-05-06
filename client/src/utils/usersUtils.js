@@ -1,6 +1,8 @@
 import users from "../fictive_data/users";
 import axios from "axios";
 
+const API_URL = "";
+
 export default {
     getUsernameByUserId: (user_id) => {
         let result = null;
@@ -10,17 +12,17 @@ export default {
         return result;
     },
     getUsersValidation: () => {
-        return axios.get(`/api/usersvalidation`);
+        return axios.get(`${API_URL}/api/usersvalidation`);
     },
     authenticateUser: (email, password) => {
-        return axios.post(`/api/authenticate`, {
+        return axios.post(`${API_URL}/api/authenticate`, {
             email,
             password,
             withCredentials: true,
         });
     },
     registerUser: (firstName, lastName, email, password) => {
-        return axios.post(`/api/register`, {
+        return axios.post(`${API_URL}/api/register`, {
             firstName,
             lastName,
             email,
@@ -29,7 +31,7 @@ export default {
         });
     },
     logUser: (token) => {
-        return axios.get(`/api/loguser`, {
+        return axios.get(`${API_URL}/api/loguser`, {
             headers: {
                 token,
             },
