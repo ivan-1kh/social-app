@@ -6,26 +6,26 @@ import Navigation from "../../components/Navigation";
 import Post from "../../components/Post";
 
 export default (props) => {
-  const [loadedPosts, setLoadedPosts] = React.useState([]);
+    const [loadedPosts, setLoadedPosts] = React.useState([]);
 
-  React.useEffect(() => {
-    if (props.loggedUser)
-      setLoadedPosts(postsUtils.getPostsByUserList(props.loggedUser.follows));
-  }, [props.loggedUser]);
+    React.useEffect(() => {
+        if (props.loggedUser) {
+            setLoadedPosts(postsUtils.getPostsByUserList(props.loggedUser.follows));
+        } else if (!localStorage.getItem("auth")) {
+            window.location.href = "/login";
+        }
+    }, [props.loggedUser]);
 
-  return (
-    <>
-      <div className='feedContainer'>
-        {loadedPosts
-          .slice(
-            0,
-            10
-          ) /*REMOVE THIS, SLICING TO MAKE LIST SHORT!!!!!!!!!!!!!!!*/
-          .map((post) => (
-            <Post key={post.id} post={post} loggedUser={props.loggedUser} />
-          ))}
-      </div>
-      <Navigation loggedUser={props.loggedUser} />
-    </>
-  );
+    return (
+        <>
+            <div className='feedContainer'>
+                {loadedPosts
+                    .slice(0, 10) /*REMOVE THIS, SLICING TO MAKE LIST SHORT!!!!!!!!!!!!!!!*/
+                    .map((post) => (
+                        <Post key={post.id} post={post} loggedUser={props.loggedUser} />
+                    ))}
+            </div>
+            <Navigation loggedUser={props.loggedUser} />
+        </>
+    );
 };

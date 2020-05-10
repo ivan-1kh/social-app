@@ -34,6 +34,8 @@ export default (props) => {
 
                 setLoggedUser(userData);
             });
+        } else {
+            setLoggedUser(null);
         }
     }, []);
 

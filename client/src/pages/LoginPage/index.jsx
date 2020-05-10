@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 import usersUtils from "../../utils/usersUtils";
 
@@ -23,12 +24,10 @@ export default (props) => {
     };
 
     return (
-        <>
-            <form className='inputForm' onSubmit={handleLogin}>
-                <input className='singleInputField' id='loginEmail' type='Email' placeholder='Email' />
-                <input className='singleInputField' id='loginPassword' type='Password' placeholder='Password' />
-                <input type='submit' value='Login' />
-            </form>
-        </>
+        <form className='inputForm' onSubmit={handleLogin}>
+            <input className='singleInputField' id='loginEmail' type='Email' placeholder='Email' />
+            <input className='singleInputField' id='loginPassword' type='Password' placeholder='Password' />
+            <input type='submit' value='Login' />
+        </form>
     );
 };
