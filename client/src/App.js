@@ -47,7 +47,7 @@ export default (props) => {
                     <Route path='/register' component={() => <RegisterPage loggedUser={loggedUser} />} />
                     <Route path='/login' component={() => <LoginPage loggedUser={loggedUser} />} />
                     <Route path='/search' component={() => <SearchPage {...props} loggedUser={loggedUser} />} />
-                    <Route path='/createpost' component={() => <CreatePostPage {...props} />} loggedUser={loggedUser} />
+                    <Route path='/createpost' component={() => <CreatePostPage {...props} loggedUser={loggedUser} />} />
                     <Route path='/activity' component={() => <ActivityPage {...props} loggedUser={loggedUser} />} />
                     <Route path='/profile' component={() => <ProfilePage {...props} loggedUser={loggedUser} />} />
                     <Route
